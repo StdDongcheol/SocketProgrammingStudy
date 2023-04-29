@@ -7,6 +7,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TCPIPClientProject", "TCPIP
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TCPIPServerProject", "TCPIPServerProject\TCPIPServerProject.vcxproj", "{D6805F9E-FF2D-45F8-BCDF-A58F2E2FAA0F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TCPEchoServer", "TCPEchoServer\TCPEchoServer.vcxproj", "{585BD2DE-48E0-4E22-A3E4-150DB71B4B2D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TCPEchoClient", "TCPEchoClient\TCPEchoClient.vcxproj", "{E440C047-1FFD-4C92-868B-F691A3F9B727}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +35,22 @@ Global
 		{D6805F9E-FF2D-45F8-BCDF-A58F2E2FAA0F}.Release|x64.Build.0 = Release|x64
 		{D6805F9E-FF2D-45F8-BCDF-A58F2E2FAA0F}.Release|x86.ActiveCfg = Release|Win32
 		{D6805F9E-FF2D-45F8-BCDF-A58F2E2FAA0F}.Release|x86.Build.0 = Release|Win32
+		{585BD2DE-48E0-4E22-A3E4-150DB71B4B2D}.Debug|x64.ActiveCfg = Debug|x64
+		{585BD2DE-48E0-4E22-A3E4-150DB71B4B2D}.Debug|x64.Build.0 = Debug|x64
+		{585BD2DE-48E0-4E22-A3E4-150DB71B4B2D}.Debug|x86.ActiveCfg = Debug|Win32
+		{585BD2DE-48E0-4E22-A3E4-150DB71B4B2D}.Debug|x86.Build.0 = Debug|Win32
+		{585BD2DE-48E0-4E22-A3E4-150DB71B4B2D}.Release|x64.ActiveCfg = Release|x64
+		{585BD2DE-48E0-4E22-A3E4-150DB71B4B2D}.Release|x64.Build.0 = Release|x64
+		{585BD2DE-48E0-4E22-A3E4-150DB71B4B2D}.Release|x86.ActiveCfg = Release|Win32
+		{585BD2DE-48E0-4E22-A3E4-150DB71B4B2D}.Release|x86.Build.0 = Release|Win32
+		{E440C047-1FFD-4C92-868B-F691A3F9B727}.Debug|x64.ActiveCfg = Debug|x64
+		{E440C047-1FFD-4C92-868B-F691A3F9B727}.Debug|x64.Build.0 = Debug|x64
+		{E440C047-1FFD-4C92-868B-F691A3F9B727}.Debug|x86.ActiveCfg = Debug|Win32
+		{E440C047-1FFD-4C92-868B-F691A3F9B727}.Debug|x86.Build.0 = Debug|Win32
+		{E440C047-1FFD-4C92-868B-F691A3F9B727}.Release|x64.ActiveCfg = Release|x64
+		{E440C047-1FFD-4C92-868B-F691A3F9B727}.Release|x64.Build.0 = Release|x64
+		{E440C047-1FFD-4C92-868B-F691A3F9B727}.Release|x86.ActiveCfg = Release|Win32
+		{E440C047-1FFD-4C92-868B-F691A3F9B727}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
