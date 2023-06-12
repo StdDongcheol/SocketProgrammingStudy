@@ -10,6 +10,7 @@
 
 #define BUF_SIZE 100
 #define NAME_SIZE 20
+#define PORTS 30928
 
 char msg[BUF_SIZE];
 char Nickname[NAME_SIZE] = "[UNKNOWN]";
@@ -18,17 +19,24 @@ unsigned WINAPI SendMsgFunc(void* arg)
 {
     SOCKET hSock = (SOCKET)arg;
     char NameMsg[NAME_SIZE + BUF_SIZE];
+    bool FirstCheck = true;
 
     while (true) 
     {
         std::cin.getline(msg, BUF_SIZE);
 
-        if (msg[0] == '^' && msg[1] == 'Z')
+        if (msg[0] == -1)
         {
             closesocket(hSock);
             exit(0);
         }
-        sprintf_s(NameMsg, "%s %s", Nickname, msg);
+        sprintf_s(NameMsg, "[%s]: %s", Nickname, msg);
+
+        if (FirstCheck)
+        {
+            FirstCheck = false;
+            sprintf_s(NameMsg, "[%s]", Nickname);
+        }
        
         send(hSock, NameMsg, (int)strlen(NameMsg), 0);
     }
@@ -67,14 +75,11 @@ int main()
     HANDLE hSendThread, hRecvThread;
 
     std::string strServerIP;
-    int ServerPort = -1;
 
     std::cout << "input your name :";
     std::cin >> Nickname;
     std::cout << "input connect to serverIP :";
     std::cin >> strServerIP;
-    std::cout << "input connect to Port :";
-    std::cin >> ServerPort;
 
     WSAStartup(MAKEWORD(2, 2), &wsaData);
     
@@ -83,7 +88,7 @@ int main()
     memset(&serverAddress, 0, sizeof(SOCKADDR_IN));
     serverAddress.sin_family = AF_INET;
     serverAddress.sin_addr.S_un.S_addr = inet_addr(strServerIP.c_str());
-    serverAddress.sin_port = htons(ServerPort);
+    serverAddress.sin_port = htons(PORTS);
 
     if (SOCKET_ERROR == connect(hMySocket, (sockaddr*)&serverAddress, sizeof(serverAddress)))
     {
